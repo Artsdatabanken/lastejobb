@@ -1,0 +1,17 @@
+{
+  "name": "lastejobb",
+  "version": "1.0.0",
+  "description": "Rutine for å kjøre en sekvens med javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/index.test.js"
+  },
+  "keywords": [],
+  "author": "Bjorn Reppen <bjreppen@gmail.com> (https://github.com/bjornreppen)",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^7.0.1",
+    "log-less-fancy": "^1.4.0",
+    "node-fetch": "^2.3.0"
+  }
+}
