@@ -1,10 +1,12 @@
 
 
-## Purpose
+Kjører et sett med javascript snippets i sekvens for å gjøre lasteoperasjon av data via Javascript.
 
-Scan for javascript files in a directory structure and then sequentially run them.
+## Funksjoner
 
-If any file returns non-zero exit code, remainder of batch will not run.
+* Scanner en katalogstruktur for javascript-filer
+* Sorterer dem og kjører dem i sekvens, en etter en
+* Dersom ett skript returnerer feilkode stopper kjøringen og returnerer feilkode.
 
 ## API
 
@@ -44,6 +46,9 @@ Se https://github.com/Artsdatabanken/lastejobb/blob/master/lib/http.js
 ```
 const {log} = require('lastejobb')
 ```
+Slå på logging ved å sette environment variabel
+ * ```export DEBUG=*``` (Linux)
+ * ```set DEBUG=*``` (Windows)
 
 Funksjoner for logging fra lastejobben
 
