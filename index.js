@@ -4,6 +4,7 @@ const path = require("path");
 const log = require("log-less-fancy")();
 const io = require("./lib/io");
 const http = require("./lib/http");
+const json = require("./lib/json");
 
 if (!process.env.DEBUG) process.env.DEBUG = "*";
 
@@ -25,4 +26,4 @@ function kjørLastejobberUnder(rotkatalog) {
   files.forEach(file => kjørLastejobb(file));
 }
 
-module.exports = { kjørLastejobberUnder, kjørLastejobb, io, http, log };
+module.exports = { kjørLastejobberUnder, kjørLastejobb, io, http, log, json };
