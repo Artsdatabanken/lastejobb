@@ -1,6 +1,6 @@
 {
   "name": "lastejobb",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Rutine for å kjøre en sekvens med javascript",
   "main": "index.js",
   "scripts": {
