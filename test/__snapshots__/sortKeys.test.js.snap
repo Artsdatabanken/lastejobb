@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`sort JSON array 1`] = `
+Array [
+  6,
+  1,
+  3,
+]
+`;
+
+exports[`sort JSON object 1`] = `
+Object {
+  "k": Array [
+    6,
+    1,
+    3,
+  ],
+  "y": Object {
+    "a": "abc",
+    "c": 5,
+  },
+  "z": 2,
+}
+`;

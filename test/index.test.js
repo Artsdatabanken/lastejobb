@@ -1,3 +1,5 @@
 const { kjørLastejobberUnder } = require("../");
 
-kjørLastejobberUnder("./test/testscript");
+test("Dummy lastejobb", () => {
+    kjørLastejobberUnder("./test/testscript");
+})
