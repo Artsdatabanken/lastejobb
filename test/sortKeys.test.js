@@ -3,7 +3,7 @@ const { json } = require("lastejobb");
 const input = {
   z: 2,
   k: [6, 1, 3],
-  y: { c: 5, a: "abc" }
+  y: { c: 5, a: "abc", inception: new Date(1880, 1, 2) }
 };
 const inputArray = [6, 1, 3];
 
