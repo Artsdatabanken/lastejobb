@@ -29,6 +29,8 @@ const {io} = require('lastejobb')
 
 Funksjoner for å lese eller skrive til filer (typisk JSON, tekst eller binære filer)
 
+Katalog for build output kan overstyres ved å sette environment variabel BUILD.
+
 Se https://github.com/Artsdatabanken/lastejobb/blob/master/lib/io.js
 
 ### http
