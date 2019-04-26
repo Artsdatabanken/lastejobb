@@ -18,6 +18,7 @@ Object {
   "y": Object {
     "a": "abc",
     "c": 5,
+    "inception": 1880-02-01T23:17:00.000Z,
   },
   "z": 2,
 }
