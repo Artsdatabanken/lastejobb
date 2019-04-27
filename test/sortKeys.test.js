@@ -1,4 +1,4 @@
-const { json } = require("lastejobb");
+const { json } = require("../");
 
 const input = {
   z: 2,
