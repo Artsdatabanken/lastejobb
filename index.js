@@ -2,11 +2,7 @@ const fs = require("fs");
 const { spawnSync } = require("child_process");
 const path = require("path");
 
-const git = require("./lib/git");
-const http = require("./lib/http");
-const io = require("./lib/io");
-const json = require("./lib/json");
-const log = require("log-less-fancy")();
+const { archive, git, http, io, json, log } = require("./lib/");
 
 if (!process.env.DEBUG) process.env.DEBUG = "*";
 
@@ -35,5 +31,6 @@ module.exports = {
   json,
   kjørLastejobberUnder,
   kjørLastejobb,
-  log
+  log,
+  archive
 };
