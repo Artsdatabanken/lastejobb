@@ -2,7 +2,7 @@ const fs = require("fs");
 const { spawnSync } = require("child_process");
 const path = require("path");
 
-const { archive, git, http, io, json, log } = require("./lib/");
+const { archive, git, http, io, json, log } = require("./lib");
 
 if (!process.env.DEBUG) process.env.DEBUG = "*";
 
