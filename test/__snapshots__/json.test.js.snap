@@ -1,5 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`arrayToObject 1`] = `
+Object {
+  "2": Object {
+    "id": 2,
+    "name": "def",
+  },
+  "5": Object {
+    "id": 5,
+    "value": "abc",
+  },
+}
+`;
+
 exports[`sort JSON array 1`] = `
 Array [
   6,

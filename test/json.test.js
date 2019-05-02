@@ -1,4 +1,4 @@
-const { json } = require("../");
+const { json } = require("..");
 
 const input = {
   z: 2,
@@ -16,5 +16,11 @@ test("sort JSON object", () => {
 // We don't sort the array
 test("sort JSON array", () => {
   const actual = json.sortKeys(inputArray);
+  expect(actual).toMatchSnapshot();
+});
+
+test("arrayToObject", () => {
+  const arr = [{ id: 5, value: "abc" }, { id: 2, name: "def" }];
+  const actual = json.arrayToObject(arr, "id");
   expect(actual).toMatchSnapshot();
 });
