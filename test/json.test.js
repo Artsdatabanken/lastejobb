@@ -24,3 +24,9 @@ test("arrayToObject", () => {
   const actual = json.arrayToObject(arr, "id");
   expect(actual).toMatchSnapshot();
 });
+
+test("objectToArray", () => {
+  const o = { a: { id: 5 }, b: { name: "def" } };
+  const actual = json.objectToArray(o, "identifier");
+  expect(actual).toMatchSnapshot();
+});

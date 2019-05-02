@@ -13,6 +13,19 @@ Object {
 }
 `;
 
+exports[`objectToArray 1`] = `
+Array [
+  Object {
+    "id": 5,
+    "identifier": "a",
+  },
+  Object {
+    "identifier": "b",
+    "name": "def",
+  },
+]
+`;
+
 exports[`sort JSON array 1`] = `
 Array [
   6,
