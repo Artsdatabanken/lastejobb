@@ -39,3 +39,9 @@ test("objectToArray", () => {
   const actual = json.objectToArray(o, "identifier");
   expect(actual).toMatchSnapshot();
 });
+
+test("moveKey", () => {
+  const o = { a: { id: 5 }, b: { name: "def" } };
+  const actual = json.moveKey(o, "a", "b.name");
+  expect(actual).toMatchSnapshot();
+});

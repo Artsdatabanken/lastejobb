@@ -24,6 +24,16 @@ Object {
 }
 `;
 
+exports[`moveKey 1`] = `
+Object {
+  "b": Object {
+    "name": Object {
+      "id": 5,
+    },
+  },
+}
+`;
+
 exports[`objectToArray 1`] = `
 Array [
   Object {
