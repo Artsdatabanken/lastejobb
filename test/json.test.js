@@ -21,7 +21,16 @@ test("sort JSON array", () => {
 
 test("arrayToObject", () => {
   const arr = [{ id: 5, value: "abc" }, { id: 2, name: "def" }];
-  const actual = json.arrayToObject(arr, "id");
+  const actual = json.arrayToObject(arr, { uniqueKey: "id" });
+  expect(actual).toMatchSnapshot();
+});
+
+test("arrayToObject: keep keys", () => {
+  const arr = [{ id: 5, value: "abc" }, { id: 2, name: "def" }];
+  const actual = json.arrayToObject(arr, {
+    uniqueKey: "id",
+    removeKeyProperty: false
+  });
   expect(actual).toMatchSnapshot();
 });
 

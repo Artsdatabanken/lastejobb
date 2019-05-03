@@ -3,6 +3,17 @@
 exports[`arrayToObject 1`] = `
 Object {
   "2": Object {
+    "name": "def",
+  },
+  "5": Object {
+    "value": "abc",
+  },
+}
+`;
+
+exports[`arrayToObject: keep keys 1`] = `
+Object {
+  "2": Object {
     "id": 2,
     "name": "def",
   },
