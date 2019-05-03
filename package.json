@@ -1,6 +1,6 @@
 {
   "name": "lastejobb",
-  "version": "1.18.0",
+  "version": "1.18.1",
   "description": "Rutine for å kjøre en sekvens med javascript-filer i batch",
   "main": "index.js",
   "scripts": {
