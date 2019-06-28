@@ -1,6 +1,6 @@
 const { spawnSync } = require("child_process");
-
-const { archive, geospatial, git, http, io, json, log } = require("./lib");
+const lib = require("./lib");
+const { io, log } = lib;
 
 if (!process.env.DEBUG) process.env.DEBUG = "*";
 
@@ -23,13 +23,7 @@ function kjørLastejobberUnder(rotkatalog) {
 }
 
 module.exports = {
-  geospatial,
-  git,
-  http,
-  io,
-  json,
+  ...lib,
   kjørLastejobberUnder,
-  kjørLastejobb,
-  log,
-  archive
+  kjørLastejobb
 };
