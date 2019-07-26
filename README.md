@@ -6,7 +6,7 @@ Kjører et sett med javascript snippets i sekvens for å gjøre lasteoperasjon a
 
 * Scanner en katalogstruktur for javascript-filer
 * Sorterer dem og kjører dem i sekvens, en etter en
-* Dersom ett skript returnerer feilkode stopper kjøringen og returnerer feilkode.
+* Dersom ett skript returnerer feilkode stopper kjøringen, feilkode returneres.
 
 ## API
 
