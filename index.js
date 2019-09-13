@@ -2,8 +2,6 @@ const { spawnSync } = require("child_process");
 const lib = require("./lib");
 const { io, log } = lib;
 
-if (!process.env.DEBUG) process.env.DEBUG = "*";
-
 function kjørLastejobb(jsFile) {
   log.debug("Kjører " + jsFile);
   const r = spawnSync("node", ["--max_old_space_size=2096", `"${jsFile}"`], {
