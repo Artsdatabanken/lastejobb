@@ -27,8 +27,11 @@ Object {
 exports[`moveKey 1`] = `
 Object {
   "b": Object {
-    "name": Object {
-      "id": 5,
+    "c": Object {
+      "a": Object {
+        "id": 5,
+      },
+      "name": "def",
     },
   },
 }
@@ -45,6 +48,12 @@ Array [
     "name": "def",
   },
 ]
+`;
+
+exports[`remove empty keys 1`] = `
+Object {
+  "c": 2,
+}
 `;
 
 exports[`sort JSON array 1`] = `

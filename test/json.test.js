@@ -41,7 +41,13 @@ test("objectToArray", () => {
 });
 
 test("moveKey", () => {
-  const o = { a: { id: 5 }, b: { name: "def" } };
-  const actual = json.moveKey(o, "a", "b.name");
+  const o = { a: { id: 5 }, b: { c: { name: "def" } } };
+  const actual = json.moveKey(o, "a", "b.c.a");
+  expect(actual).toMatchSnapshot();
+});
+
+test("remove empty keys", () => {
+  const input = { a: { b: {} }, c: 2 };
+  const actual = json.removeEmptyKeys(input);
   expect(actual).toMatchSnapshot();
 });
