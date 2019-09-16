@@ -51,3 +51,20 @@ test("remove empty keys", () => {
   const actual = json.removeEmptyKeys(input);
   expect(actual).toMatchSnapshot();
 });
+
+test("merge deep", () => {
+  const obj1 = {
+    a: 1,
+    b: 1,
+    c: { x: 1, y: 1 },
+    d: [1, 1]
+  };
+  const obj2 = {
+    b: 2,
+    c: { y: 2, z: 2 },
+    d: [2, 2],
+    e: 2
+  };
+  const actual = json.mergeDeep(obj1, obj2);
+  expect(actual).toMatchSnapshot();
+});
