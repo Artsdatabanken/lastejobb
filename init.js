@@ -80,6 +80,18 @@ function npmInit() {
   exec("npm", ["init", "-y"]);
 }
 
+function npmInit() {
+  if (fs.existsSync(".git")) return;
+  log.info("Initialize Git");
+  exec("git", ["init"]);
+}
+
+function makeGitIgnore() {
+  if (fs.existsSync(".gitignore")) return;
+  const ignore = ["node_modules", "data", "build"];
+  fs.writeFileSync(".gitignore", ignore.join("\n"));
+}
+
 function init() {
   npmInit();
   installLastejobb();
@@ -87,6 +99,8 @@ function init() {
   writeIndex();
   makeDirs();
   makeSteps();
+  gitInit();
+  makeGitIgnore();
 }
 
 module.exports = { init };
