@@ -70,8 +70,8 @@ function makeStep(fn) {
 }
 
 function makeSteps() {
-  makeStep("stages/download/10_sample");
-  makeStep("stages/transform/10_sample");
+  makeStep("stages/download/10_sample.js");
+  makeStep("stages/transform/10_sample.js");
 }
 
 function npmInit() {
