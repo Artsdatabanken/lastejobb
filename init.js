@@ -2,6 +2,15 @@ const { spawnSync } = require("child_process");
 const { log } = require("./lib");
 const fs = require("fs");
 
+function exec(cmd, args) {
+  const r = spawnSync(cmd, args, {
+    encoding: "buffer",
+    shell: true,
+    stdio: [0, 1, 2]
+  });
+  if (r.status > 0) process.exit(1);
+}
+
 const scripts = {
   download: "node index download",
   transform: "node --max_old_space_size=8192 index transform",
@@ -16,7 +25,7 @@ function addScripts() {
   Object.keys(scripts).forEach(key => {
     if (package.scripts[key])
       return log.warn("Script '" + key + "' already exists.");
-    package.scripts[key] = scripts[keys];
+    package.scripts[key] = scripts[key];
   });
   fs.writeFileSync("package.json", JSON.stringify(package, null, " "));
 }
@@ -47,12 +56,7 @@ function makeDirs() {
 
 function installLastejobb() {
   log.info("Installing library lastejobb");
-  const r = spawnSync("npm", ["install", "lastejobb"], {
-    encoding: "buffer",
-    shell: true,
-    stdio: [0, 1, 2]
-  });
-  if (r.status > 0) process.exit(1);
+  exec("npm", ["install", "lastejobb"]);
 }
 
 function makeStep(fn) {
@@ -71,7 +75,14 @@ function makeSteps() {
   makeStep("stages/transform/10_sample");
 }
 
+function npmInit() {
+  if (fs.existsSync("package.json")) return;
+  log.info("Initialize npm project");
+  exec("npm", ["init", "-y"]);
+}
+
 function init() {
+  npmInit();
   installLastejobb();
   addScripts();
   writeIndex();
