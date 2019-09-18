@@ -8,6 +8,13 @@ Kjører en sekvens med steg (`stages/`) i alfabetisk rekkefølge.
 - Sorterer dem og kjører dem i sekvens, en etter en
 - Dersom et skript returnerer feil stopper kjøringen, feilkoden returneres.
 
+## Kataloger
+
+- `stages/download`: Script for å laste ned eksterne datafiler til `data/`
+- `stages/transform`: Script som produserer resultatet og legger det i `build/`
+- `build`: Filene som kommer ut av lastejobben
+- `data`: Temporær lagring av nedlastede data og mellomformater
+
 ## Bruk
 
 ### Download
@@ -16,7 +23,7 @@ Kjører en sekvens med steg (`stages/`) i alfabetisk rekkefølge.
 npm run download
 ```
 
-Laster ned eksterne avhengigheter som lastejobben er avhengig av for å produsere sitt resultat i "transform"
+Laster ned eksterne avhengigheter som lastejobben er avhengig av for å produsere sitt resultat i "transform". Denne kjører stegene som ligger i `stages/download`. Nedlastede data lagres som en konvensjon i katalog `data`.
 
 ### Transform
 
@@ -24,7 +31,9 @@ Laster ned eksterne avhengigheter som lastejobben er avhengig av for å produser
 npm run transform
 ```
 
-Bruker allerede nedlastede data til å produsere sitt resultat. Denne brukes gjerne mens man utvikler så man slipper å laste ned data hver gang, og kan også brukes uten at man har tilgang til nett sålenge man har gjort `download` først.
+Bruker allerede nedlastede data til å produsere sitt resultat. Denne brukes gjerne mens man utvikler så man slipper å laste ned data hver gang, og kan også brukes uten at man har tilgang til nett sålenge man har gjort `download` først. Denne kjører stegene som ligger i `stages/transform`
+
+Sluttproduktet av transform skrives som en konvensjon til katalogen `build`.
 
 ### Build
 
@@ -33,6 +42,10 @@ npm run build
 ```
 
 Kjører hele lastejobben, først `download`, så `transform`.
+
+### Deploy
+
+Tar filene fra `build`-katalogen som er produsert i `build` eller `tranform` og publiserer disse offentlig slik at andre lastejobber eller konsumenter kan nå dem uten å kjøre lastejobben.
 
 ## Lage en ny lastejobb
 
