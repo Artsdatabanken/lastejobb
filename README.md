@@ -1,4 +1,4 @@
-Kjører et sett med javascript snippets i sekvens for å gjøre lasteoperasjon av data via Javascript.
+Lastejobb som kjører en sekvens med steg (stages) for å produsere et datasett.
 
 ## Funksjoner
 
@@ -6,10 +6,10 @@ Kjører et sett med javascript snippets i sekvens for å gjøre lasteoperasjon a
 - Sorterer dem og kjører dem i sekvens, en etter en
 - Dersom ett skript returnerer feilkode stopper kjøringen, feilkode returneres.
 
-## Installere
+## Installere i nytt prosjekt
 
 ```
-npx lastejobb init
+$ npx lastejobb init
 ```
 
 ## API

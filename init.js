@@ -80,9 +80,9 @@ function npmInit() {
   exec("npm", ["init", "-y"]);
 }
 
-function npmInit() {
+function gitInit() {
   if (fs.existsSync(".git")) return;
-  log.info("Initialize Git");
+  log.info("Initialize Git repo");
   exec("git", ["init"]);
 }
 
