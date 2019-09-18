@@ -22,7 +22,7 @@ function kjørLastejobberUnder(rotkatalog) {
   files.forEach(file => kjørLastejobb(file));
 }
 
-if (process.argv.length > 0) {
+if (process.argv.length > 2) {
   switch (process.argv[2]) {
     case "init":
       log.info("Initialiserer lastejobb");
