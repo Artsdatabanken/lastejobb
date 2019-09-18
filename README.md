@@ -8,6 +8,32 @@ Kjører en sekvens med steg (`stages/`) i alfabetisk rekkefølge.
 - Sorterer dem og kjører dem i sekvens, en etter en
 - Dersom et skript returnerer feil stopper kjøringen, feilkoden returneres.
 
+## Bruk
+
+### Download
+
+```
+npm run download
+```
+
+Laster ned eksterne avhengigheter som lastejobben er avhengig av for å produsere sitt resultat i "transform"
+
+### Transform
+
+```
+npm run transform
+```
+
+Bruker allerede nedlastede data til å produsere sitt resultat. Denne brukes gjerne mens man utvikler så man slipper å laste ned data hver gang, og kan også brukes uten at man har tilgang til nett sålenge man har gjort `download` først.
+
+### Build
+
+```
+npm run build
+```
+
+Kjører hele lastejobben, først `download`, så `transform`.
+
 ## Lage en ny lastejobb
 
 Hvis du ønsker å sette opp en ny lastejobb er en enkel måte å gjøre det på å lage en ny katalog for så å be lastejobb-modulen initialisere. Den oppretter et nytt git repo, lager package.json med script for å kjøre lastejobben, README-fil og eksempelsteg.
