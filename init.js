@@ -40,7 +40,7 @@ function addScripts() {
 
 function writeIndex() {
   log.info("Create index.js");
-  if (fs.existsSync("index.js")) throw new Error("index.js already exists.");
+  if (fs.existsSync("index.js")) return log.warn("index.js already exists.");
   const index = [
     'if (!process.env.DEBUG) process.env.DEBUG = "*"',
     'const { kjørLastejobberUnder } = require("lastejobb")',
@@ -51,8 +51,24 @@ function writeIndex() {
   fs.writeFileSync("index.js", index.join("\n"));
 }
 
+function addReadme() {
+  log.info("Create README.md");
+  if (fs.existsSync("README.md")) return log.warn("index.js already exists.");
+  console.log(__dirname);
+  let filePath = path.join(
+    path.dirname(fs.realpathSync(__filename)),
+    "../README.md"
+  );
+  console.log(filePath);
+  filePath = __dirname + "/README.md";
+  console.log(filePath);
+  const readme = fs.readFileSync(filePath, "utf8");
+  fs.writeFileSync("README.md", readme);
+}
+
 function mkdir(path) {
   log.info("Make directory " + path);
+  if (fs.existsSync(path)) return;
   fs.mkdirSync(path);
 }
 
@@ -102,14 +118,15 @@ function makeGitIgnore() {
 }
 
 function init() {
+  gitInit();
+  makeGitIgnore();
   npmInit();
   installLastejobb();
   addScripts();
   writeIndex();
   makeDirs();
   makeSteps();
-  gitInit();
-  makeGitIgnore();
+  addReadme();
 }
 
 module.exports = { init };
