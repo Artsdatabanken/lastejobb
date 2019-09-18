@@ -19,7 +19,7 @@ Kjører en sekvens med steg (`stages/`) i alfabetisk rekkefølge.
 
 ### Download
 
-```
+```bash
 npm run download
 ```
 
@@ -27,7 +27,7 @@ Laster ned eksterne avhengigheter som lastejobben er avhengig av for å produser
 
 ### Transform
 
-```
+```bash
 npm run transform
 ```
 
@@ -37,7 +37,7 @@ Sluttproduktet av transform skrives som en konvensjon til katalogen `build`.
 
 ### Build
 
-```
+```bash
 npm run build
 ```
 
@@ -51,7 +51,7 @@ Tar filene fra `build`-katalogen som er produsert i `build` eller `tranform` og 
 
 Hvis du ønsker å sette opp en ny lastejobb er en enkel måte å gjøre det på å lage en ny katalog for så å be lastejobb-modulen initialisere. Den oppretter et nytt git repo, lager package.json med script for å kjøre lastejobben, README-fil og eksempelsteg.
 
-```
+```bash
 $ mkdir minlastejobb && cd minlastejobb
 $ npx lastejobb init
 npx: installed 35 in 2.808s
@@ -76,9 +76,9 @@ npx: installed 35 in 2.808s
 
 ## API
 
-### Lastejobb
+### Lastejobb API
 
-```
+```bash
 const lastejobb = require('lastejobb')
 ```
 
@@ -89,7 +89,7 @@ const lastejobb = require('lastejobb')
 
 ### io
 
-```
+```bash
 const {io} = require('lastejobb')
 ```
 
@@ -101,7 +101,7 @@ Se https://github.com/Artsdatabanken/lastejobb/blob/master/lib/io.js
 
 ### http
 
-```
+```bash
 const {http} = require('lastejobb')
 ```
 
@@ -111,7 +111,7 @@ Se https://github.com/Artsdatabanken/lastejobb/blob/master/lib/http.js
 
 ### log
 
-```
+```bash
 const {log} = require('lastejobb')
 ```
 
