@@ -6,9 +6,13 @@ function exec(cmd, args) {
   const r = spawnSync(cmd, args, {
     encoding: "buffer",
     shell: true,
-    stdio: [0, 1, 2]
+    stdio: "pipe"
   });
-  if (r.status > 0) process.exit(1);
+  r.stdout.split("\n").forEach(line => log.info(line));
+  if (r.status > 0) {
+    log.error(r.stderr);
+    process.exit(1);
+  }
 }
 
 const scripts = {
