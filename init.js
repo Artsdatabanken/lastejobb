@@ -54,14 +54,7 @@ function writeIndex() {
 function addReadme() {
   log.info("Create README.md");
   if (fs.existsSync("README.md")) return log.warn("index.js already exists.");
-  console.log(__dirname);
-  let filePath = path.join(
-    path.dirname(fs.realpathSync(__filename)),
-    "../README.md"
-  );
-  console.log(filePath);
-  filePath = __dirname + "/README.md";
-  console.log(filePath);
+  const filePath = __dirname + "/README.md";
   const readme = fs.readFileSync(filePath, "utf8");
   fs.writeFileSync("README.md", readme);
 }
