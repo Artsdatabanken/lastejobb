@@ -1,15 +1,38 @@
-Lastejobb som kjører en sekvens med steg (stages) for å produsere et datasett.
+# Lastejobb
+
+Kjører en sekvens med steg (`stages/`) i alfabetisk rekkefølge.
 
 ## Funksjoner
 
-- Scanner en katalogstruktur for javascript-filer
+- Scanner katalogstruktur for steg
 - Sorterer dem og kjører dem i sekvens, en etter en
-- Dersom ett skript returnerer feilkode stopper kjøringen, feilkode returneres.
+- Dersom et skript returnerer feil stopper kjøringen, feilkoden returneres.
 
-## Installere i nytt prosjekt
+## Lage en ny lastejobb
+
+Hvis du ønsker å sette opp en ny lastejobb er en enkel måte å gjøre det på å lage en ny katalog for så å be lastejobb-modulen initialisere. Den oppretter et nytt git repo, lager package.json med script for å kjøre lastejobben, README-fil og eksempelsteg.
 
 ```
+$ mkdir minlastejobb && cd minlastejobb
 $ npx lastejobb init
+npx: installed 35 in 2.808s
+  ℹlastejobb Initialiserer lastejobb +0ms
+  ℹlastejobb Initialize Git repo +1ms
+  ℹlastejobb Initialized empty Git repository in /home/b/minlastejobb/.git/ +7ms
+  ℹlastejobb Initialize npm project +1ms
+  ℹlastejobb Wrote to /home/b/minlastejobb/package.json: +163ms
+  ℹlastejobb Installing library lastejobb +0ms
+  ℹlastejobb + lastejobb@2.4.1 +2s
+  ℹlastejobb added 35 packages from 37 contributors and audited 47 packages in 1.589s +1ms
+  ℹlastejobb found 0 vulnerabilities +0ms
+  ℹlastejobb Add scripts to package.json +0ms
+  ℹlastejobb Create index.js +1ms
+  ℹlastejobb Make directory stages +1ms
+  ℹlastejobb Make directory stages/download +0ms
+  ℹlastejobb Make directory stages/transform +1ms
+  ℹlastejobb Create stages/download/10_sample.js +0ms
+  ℹlastejobb Create stages/transform/10_sample.js +0ms
+  ℹlastejobb Create README.md +1ms
 ```
 
 ## API
