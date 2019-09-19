@@ -29,13 +29,13 @@ const scripts = {
 
 function addScripts() {
   log.info("Add scripts to package.json");
-  const package = JSON.parse(fs.readFileSync("package.json"));
+  const pjson = JSON.parse(fs.readFileSync("package.json"));
   Object.keys(scripts).forEach(key => {
-    if (package.scripts[key])
+    if (pjson.scripts[key])
       return log.warn("Script '" + key + "' already exists.");
-    package.scripts[key] = scripts[key];
+    pjson.scripts[key] = scripts[key];
   });
-  fs.writeFileSync("package.json", JSON.stringify(package, null, " "));
+  fs.writeFileSync("package.json", JSON.stringify(pjson, null, " "));
 }
 
 function writeIndex() {
