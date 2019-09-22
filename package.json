@@ -16,7 +16,7 @@
     "access": "public"
   },
   "dependencies": {
-    "csv-parse": "^4.4.5",
+    "csv-parse": "^4.4.6",
     "decompress-zip": "^0.2.2",
     "fs-extra": "^8.1.0",
     "generate-schema": "^2.6.0",
