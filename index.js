@@ -4,12 +4,12 @@ const init = require("./init");
 const { io, log, processes } = lib;
 const path = require("path");
 
-function runJavascript(jsFile) {
-  processes.exec("node", ["--max_old_space_size=2096", `"${jsFile}"`]);
+async function runJavascript(jsFile) {
+  await processes.exec("node", ["--max_old_space_size=2096", `"${jsFile}"`]);
 }
 
-function runShellscript(shFile) {
-  processes.exec(shFile);
+async function runShellscript(shFile) {
+  await processes.exec(shFile);
 }
 
 const filtypeLaunch = {
@@ -17,20 +17,20 @@ const filtypeLaunch = {
   ".sh": runShellscript
 };
 
-function kjørLastejobb(scriptFile) {
+async function kjørLastejobb(scriptFile) {
   if (scriptFile.indexOf(".test") >= 0) return;
   const ext = path.parse(scriptFile).ext;
   const launcher = filtypeLaunch[ext];
   if (!launcher) return log.warn("Mangler funksjon for å kjøre " + scriptFile);
   log.debug("Kjører " + scriptFile);
-  launcher(scriptFile);
+  await launcher(scriptFile);
 }
 
-function kjørLastejobberUnder(rotkatalog) {
+async function kjørLastejobberUnder(rotkatalog) {
   let files = io.findFiles(rotkatalog);
   files = files.sort();
   log.info("Fant " + files.length + " lastejobber");
-  files.forEach(file => kjørLastejobb(file));
+  for (var file of files) await kjørLastejobb(file);
 }
 
 const argLast = process.argv[process.argv.length];
