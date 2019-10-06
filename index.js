@@ -1,24 +1,21 @@
 #!/usr/bin/env node
-const { spawnSync } = require("child_process");
 const lib = require("./lib");
 const init = require("./init");
-const { io, log } = lib;
+const { io, log, processes } = lib;
 
-function kjørLastejobb(jsFile) {
-  log.debug("Kjører " + jsFile);
-  const r = spawnSync("node", ["--max_old_space_size=2096", `"${jsFile}"`], {
-    encoding: "buffer",
-    shell: true,
-    stdio: [0, 1, 2]
-  });
-  if (r.status > 0) process.exit(1);
+function kjørLastejobb(sciptFile) {
+  if (sciptFile.indexOf(".test") >= 0) return;
+  const ext = path.parse(sciptFile);
+  const launcher = filtypeLaunch[ext];
+  log.debug("Kjører " + sciptFile);
+  const status = launcher(sciptFile);
+  if (status > 0) process.exit(1);
 }
 
 function kjørLastejobberUnder(rotkatalog) {
-  let files = io.findFiles(rotkatalog, ".js");
+  let files = io.findFiles(rotkatalog);
   files = files.sort();
   log.info("Fant " + files.length + " lastejobber");
-  files = files.filter(file => file.indexOf(".test") < 0);
   files.forEach(file => kjørLastejobb(file));
 }
 
@@ -33,4 +30,22 @@ module.exports = {
   ...lib,
   kjørLastejobberUnder,
   kjørLastejobb
+};
+
+function runJavascript(fn) {
+  const r = processes.exec("node", [
+    "--max_old_space_size=2096",
+    `"${jsFile}"`
+  ]);
+  return r.status;
+}
+
+function runShellscript(fn) {
+  const r = processes.exec(fn);
+  return r.status;
+}
+
+const filtypeLaunch = {
+  ".js": runJavascript,
+  ".sh": runShellscript
 };

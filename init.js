@@ -1,7 +1,7 @@
-const { log, process } = require("./lib");
+const { log, processes } = require("./lib");
 const fs = require("fs");
 
-const exec = process.exec;
+const exec = processes.exec;
 
 const scripts = {
   download: "node index download",
