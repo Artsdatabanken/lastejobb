@@ -7,7 +7,7 @@ const scripts = {
   download: "node index download",
   transform: "node index transform",
   build: "npm run download && npm run transform",
-  deploy: "./scripts/deploy.sh"
+  deploy: "node index deploy"
 };
 
 function addScripts() {
@@ -52,6 +52,7 @@ function makeDirs() {
   mkdir("stages");
   mkdir("stages/download");
   mkdir("stages/transform");
+  mkdir("stages/deploy");
 }
 
 function installLastejobb() {
@@ -73,6 +74,7 @@ function makeStep(fn) {
 function makeSteps() {
   makeStep("stages/download/10_sample.js");
   makeStep("stages/transform/10_sample.js");
+  makeStep("stages/deploy/10_sample.js");
 }
 
 function npmInit() {
