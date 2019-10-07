@@ -7,7 +7,8 @@ const { spawnSync } = require("child_process");
 
 async function runJavascript(jsFile) {
   const r = spawnSync("node", ["--max_old_space_size=2096", `"${jsFile}"`], {
-    shell: true
+    shell: true,
+    stdio: [0, 1, 2]
   });
   if (r.status > 0) process.exit(1);
 }
