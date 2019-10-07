@@ -3,9 +3,13 @@ const lib = require("./lib");
 const init = require("./init");
 const { io, log, processes } = lib;
 const path = require("path");
+const { spawnSync } = require("child_process");
 
 async function runJavascript(jsFile) {
-  await processes.exec("node", ["--max_old_space_size=2096", `"${jsFile}"`]);
+  const r = spawnSync("node", ["--max_old_space_size=2096", `"${jsFile}"`], {
+    shell: true
+  });
+  if (r.status > 0) process.exit(1);
 }
 
 async function runShellscript(shFile) {
