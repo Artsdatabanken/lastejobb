@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const lib = require("./lib");
 const init = require("./init");
-const { io, log, processes } = lib;
+const { io, log, processes, sparql } = lib;
 const path = require("path");
 const { spawnSync } = require("child_process");
 
@@ -17,8 +17,14 @@ async function runShellscript(shFile) {
   await processes.exec(shFile);
 }
 
+async function runSparqlQuery(shFile) {
+  const fn = path.parse(shFile).name;
+  await sparql.queryFromFile(shFile, fn);
+}
+
 const filtypeLaunch = {
   ".js": runJavascript,
+  ".sparql": runSparqlQuery,
   ".sh": runShellscript
 };
 
