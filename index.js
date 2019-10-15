@@ -44,7 +44,7 @@ async function kjørLastejobberUnder(rotkatalog) {
   for (var file of files) await kjørLastejobb(file);
 }
 
-const argLast = process.argv[process.argv.length];
+const argLast = process.argv[process.argv.length - 1];
 switch (argLast) {
   case "init":
     log.info("Initialiserer lastejobb");
