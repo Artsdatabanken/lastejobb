@@ -24,6 +24,19 @@ Object {
 }
 `;
 
+exports[`deleteKey 1`] = `
+Object {
+  "a": Object {},
+  "b": Object {
+    "c": Object {
+      "name": "def",
+    },
+  },
+}
+`;
+
+exports[`getKey 1`] = `5`;
+
 exports[`merge deep 1`] = `
 Object {
   "a": 1,

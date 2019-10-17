@@ -33,8 +33,15 @@ const input = {
       }
     ]
   },
-  "~": {
-    kode: "AO-KS-FS",
+  "AO-KS": {
+    kode: "AO-KS",
+    tittel: {
+      nb: "Rot"
+    },
+    overordnet: []
+  },
+  AO: {
+    kode: "AO",
     tittel: {
       nb: "Rot"
     },

@@ -40,6 +40,18 @@ test("objectToArray", () => {
   expect(actual).toMatchSnapshot();
 });
 
+test("getKey", () => {
+  const o = { a: { id: 5 }, b: { c: { name: "def" } } };
+  const actual = json.getKey(o, "a.id");
+  expect(actual).toMatchSnapshot();
+});
+
+test("deleteKey", () => {
+  const o = { a: { id: 5 }, b: { c: { name: "def" } } };
+  json.deleteKey(o, "a.id");
+  expect(o).toMatchSnapshot();
+});
+
 test("moveKey", () => {
   const o = { a: { id: 5 }, b: { c: { name: "def" } } };
   const actual = json.moveKey(o, "a", "b.c.a");
