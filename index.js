@@ -41,7 +41,11 @@ async function kjørLastejobberUnder(rotkatalog) {
   let files = io.findFiles(rotkatalog);
   files = files.sort();
   log.info("Fant " + files.length + " lastejobber");
-  for (var file of files) await kjørLastejobb(file);
+  for (var file of files)
+    await kjørLastejobb(file).catch(err => {
+      log.error(err);
+      process.exit(1);
+    });
 }
 
 const argLast = process.argv[process.argv.length - 1];
