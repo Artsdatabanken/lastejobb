@@ -4,48 +4,28 @@ const input = {
   "AO-KS-FS-JM": {
     kode: "AO-KS-FS-JM",
     tittel: { nb: "Jan Mayen" },
-    overordnet: [
-      {
-        kode: "AO-KS-FS",
-        tittel: {
-          nb: "Fiskerisone"
-        }
-      },
-      {
-        kode: "~",
-        tittel: {
-          nb: "Usynlig rot"
-        }
-      }
-    ]
+    foreldre: ["AO-KS-FS"]
   },
   "AO-KS-FS": {
     kode: "AO-KS-FS",
     tittel: {
       nb: "Fiskerisone"
     },
-    overordnet: [
-      {
-        kode: "~",
-        tittel: {
-          nb: "Usynlig rot"
-        }
-      }
-    ]
+    foreldre: ["AO-KS"]
   },
   "AO-KS": {
     kode: "AO-KS",
     tittel: {
-      nb: "Rot"
+      nb: "Kontinentalsokkel"
     },
-    overordnet: []
+    foreldre: ["AO"]
   },
   AO: {
     kode: "AO",
     tittel: {
       nb: "Rot"
     },
-    overordnet: []
+    foreldre: []
   }
 };
 

@@ -2,52 +2,43 @@
 
 exports[`createUrl 1`] = `
 Object {
-  "AO-KS-FS": Object {
-    "kode": "AO-KS-FS",
-    "overordnet": Array [
-      Object {
-        "kode": "~",
-        "tittel": Object {
-          "nb": "Usynlig rot",
-        },
-        "url": "Rot",
-      },
-    ],
-    "tittel": Object {
-      "nb": "Fiskerisone",
-    },
-    "url": "Fiskerisone",
-  },
-  "AO-KS-FS-JM": Object {
-    "kode": "AO-KS-FS-JM",
-    "overordnet": Array [
-      Object {
-        "kode": "AO-KS-FS",
-        "tittel": Object {
-          "nb": "Fiskerisone",
-        },
-        "url": "Fiskerisone",
-      },
-      Object {
-        "kode": "~",
-        "tittel": Object {
-          "nb": "Usynlig rot",
-        },
-        "url": "Rot",
-      },
-    ],
-    "tittel": Object {
-      "nb": "Jan Mayen",
-    },
-    "url": "Fiskerisone/Jan_Mayen",
-  },
-  "~": Object {
-    "kode": "AO-KS-FS",
-    "overordnet": Array [],
+  "AO": Object {
+    "foreldre": Array [],
+    "kode": "AO",
     "tittel": Object {
       "nb": "Rot",
     },
-    "url": "Rot",
+    "url": "/Rot",
+  },
+  "AO-KS": Object {
+    "foreldre": Array [
+      "AO",
+    ],
+    "kode": "AO-KS",
+    "tittel": Object {
+      "nb": "Kontinentalsokkel",
+    },
+    "url": "/Rot/Kontinentalsokkel",
+  },
+  "AO-KS-FS": Object {
+    "foreldre": Array [
+      "AO-KS",
+    ],
+    "kode": "AO-KS-FS",
+    "tittel": Object {
+      "nb": "Fiskerisone",
+    },
+    "url": "/Rot/Kontinentalsokkel/Fiskerisone",
+  },
+  "AO-KS-FS-JM": Object {
+    "foreldre": Array [
+      "AO-KS-FS",
+    ],
+    "kode": "AO-KS-FS-JM",
+    "tittel": Object {
+      "nb": "Jan Mayen",
+    },
+    "url": "/Rot/Kontinentalsokkel/Fiskerisone/Jan_Mayen",
   },
 }
 `;
