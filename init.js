@@ -91,7 +91,7 @@ function gitInit() {
 
 function makeGitIgnore() {
   if (fs.existsSync(".gitignore")) return;
-  const ignore = ["node_modules", "data", "build"];
+  const ignore = ["node_modules", "temp", "build"];
   fs.writeFileSync(".gitignore", ignore.join("\n"));
 }
 
