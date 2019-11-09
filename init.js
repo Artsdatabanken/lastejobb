@@ -77,10 +77,10 @@ function makeSteps() {
   makeStep("stages/deploy/10_sample.js");
 }
 
-function npmInit() {
+async function npmInit() {
   if (fs.existsSync("package.json")) return;
   log.info("Initialize npm project");
-  exec("npm", ["init", "-y"]);
+  await exec("npm", ["init", "-y"]);
 }
 
 function gitInit() {
@@ -95,10 +95,10 @@ function makeGitIgnore() {
   fs.writeFileSync(".gitignore", ignore.join("\n"));
 }
 
-function init() {
+async function init() {
   gitInit();
   makeGitIgnore();
-  npmInit();
+  await npmInit();
   installLastejobb();
   addScripts();
   writeIndex();
