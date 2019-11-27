@@ -26,7 +26,9 @@ Object {
 
 exports[`deleteKey 1`] = `
 Object {
-  "a": Object {},
+  "a": Object {
+    "id": 5,
+  },
   "b": Object {
     "c": Object {
       "name": "def",

@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`detect jpg 1`] = `"jpg"`;
+
+exports[`detect png 1`] = `"png"`;
