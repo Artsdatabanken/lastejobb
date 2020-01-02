@@ -10,10 +10,10 @@ Kjører en sekvens med steg (`stages/`) i alfabetisk rekkefølge.
 
 ## Kataloger
 
-- `stages/download`: Script for å laste ned eksterne datafiler til `data/`
+- `stages/download`: Script for å laste ned eksterne datafiler til `temp/`
 - `stages/transform`: Script som produserer resultatet og legger det i `build/`
 - `build`: Filene som kommer ut av lastejobben
-- `data`: Temporær lagring av nedlastede data og mellomformater
+- `temp`: Temporær lagring av nedlastede data og mellomformater
 
 ## Bruk
 
