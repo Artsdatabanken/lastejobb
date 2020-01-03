@@ -1,7 +1,7 @@
 {
   "name": "lastejobb",
-  "version": "2.21.0",
-  "description": "Rutine for å kjøre en sekvens med javascript-filer i batch",
+  "version": "2.22.0",
+  "description": "Rutine for å kjøre en sekvens med lastejobber (js/sh/sparql) i batch",
   "main": "index.js",
   "bin": {
     "lastejobb": "./index.js"
