@@ -7,11 +7,16 @@ Kjører en sekvens med steg (`stages/`) i alfabetisk rekkefølge.
 - Scanner katalogstruktur for steg
 - Sorterer dem og kjører dem i sekvens, en etter en
 - Dersom et skript returnerer feil stopper kjøringen, feilkoden returneres.
+- Støttede filformater:
+  - .js: Javascript
+  - .sh: Unix shell script
+  - .sparql: SPARQL Protocol and RDF Query Language
 
 ## Kataloger
 
 - `stages/download`: Script for å laste ned eksterne datafiler til `temp/`
 - `stages/transform`: Script som produserer resultatet og legger det i `build/`
+- `stages/deploy`: Script som publiserer resultat som ligger i `build/`
 - `build`: Filene som kommer ut av lastejobben
 - `temp`: Temporær lagring av nedlastede data og mellomformater
 
