@@ -60,3 +60,12 @@ module.exports = {
   kjørLastejobberUnder,
   kjørLastejobb
 };
+
+if (!process.env.DEBUG) process.env.DEBUG = "*"
+if (process.argv.length === 3) {
+  const scripPath = process.argv[2]
+  if (!io.directoryExists(scripPath))
+    return log.info("Usage: npx lastejobb <scriptPath>")
+  log.info("Kjører lastejobber i " + scripPath)
+  kjørLastejobberUnder(scripPath)
+}

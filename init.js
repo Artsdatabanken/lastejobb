@@ -4,10 +4,10 @@ const fs = require("fs");
 const exec = processes.exec;
 
 const scripts = {
-  download: "node index download",
-  transform: "node index transform",
+  download: "node node_modules/lastejobb/index stages/download",
+  transform: "node node_modules/lastejobb/index stages/transform",
   build: "npm run download && npm run transform",
-  deploy: "node index deploy"
+  deploy: "node node_modules/lastejobb/index stages/deploy"
 };
 
 function addScripts() {
@@ -19,19 +19,6 @@ function addScripts() {
     pjson.scripts[key] = scripts[key];
   });
   fs.writeFileSync("package.json", JSON.stringify(pjson, null, " "));
-}
-
-function writeIndex() {
-  log.info("Create index.js");
-  if (fs.existsSync("index.js")) return log.warn("index.js already exists.");
-  const index = [
-    'if (!process.env.DEBUG) process.env.DEBUG = "*"',
-    'const { kjørLastejobberUnder } = require("lastejobb")',
-    "",
-    'const scripPath = "stages/" + (process.argv[2] || "")',
-    "kjørLastejobberUnder(scripPath)"
-  ];
-  fs.writeFileSync("index.js", index.join("\n"));
 }
 
 function addReadme() {
@@ -101,7 +88,6 @@ async function init() {
   await npmInit();
   installLastejobb();
   addScripts();
-  writeIndex();
   makeDirs();
   makeSteps();
   addReadme();
