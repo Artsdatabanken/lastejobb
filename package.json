@@ -1,6 +1,6 @@
 {
   "name": "lastejobb",
-  "version": "3.0.4",
+  "version": "3.1.0",
   "description": "Rutine for å kjøre en sekvens med lastejobber (js/sh/sparql) i batch",
   "main": "index.js",
   "bin": {
