@@ -47,21 +47,35 @@ function installLastejobb() {
   exec("npm", ["install", "lastejobb"]);
 }
 
-function makeStep(fn) {
-  log.info("Create " + fn);
-  const script = [
-    'const { log } = require("lastejobb");',
+const scripts = {
+  download: [
+    'const { http, log } = require("lastejobb");',
+    "",
+    'log.info("Processing...")',
+    ""
+  ],
+  transform: [
+    'const { io, log } = require("lastejobb");',
+    "",
+    'constio.readJson()'
+  ],
+  deploy: [
+    'const { process } = require("lastejobb");',
     "",
     'log.info("Processing...")'
-  ];
+  ]
+};
+
+function makeStep(fn) {
+  log.info("Create " + fn);
   if (fs.existsSync(fn)) return log.warn(fn + " already exists");
   fs.writeFileSync(fn, script.join("\n"));
 }
 
 function makeSteps() {
-  makeStep("stages/download/10_sample.js");
-  makeStep("stages/transform/10_sample.js");
-  makeStep("stages/deploy/10_sample.js");
+  makeStep("stages/download/10_download.js");
+  makeStep("stages/transform/10_transform.js");
+  makeStep("stages/deploy/10_deploy.js");
 }
 
 async function npmInit() {

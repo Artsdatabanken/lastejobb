@@ -1,10 +1,10 @@
 {
   "name": "lastejobb",
-  "version": "3.2.0",
+  "version": "3.3.0",
   "description": "Rutine for å kjøre en sekvens med lastejobber (js/sh/sparql) i batch",
   "main": "index.js",
   "bin": {
-    "lastejobb": "./index.js"
+    "lastejobb": "./lastejobb.js"
   },
   "scripts": {
     "test": "jest"
@@ -16,6 +16,7 @@
     "access": "public"
   },
   "dependencies": {
+    "@types/node": "^13.7.1",
     "csv-parse": "^4.8.5",
     "decompress-zip": "^0.2.2",
     "fs-extra": "^8.1.0",

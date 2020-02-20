@@ -1,4 +1,4 @@
-const { url } = require("..");
+const { url } = require("../lib");
 
 const input = {
   "AO-KS-FS-JM": {

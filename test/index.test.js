@@ -1,5 +1,5 @@
-const { kjørLastejobberUnder } = require("../");
+const { kjørLastejobberUnder } = require("../lib/lastejobb");
 
 test("Dummy lastejobb", () => {
-    kjørLastejobberUnder("./test/testscript");
-})
+  kjørLastejobberUnder("./test/testscript");
+});

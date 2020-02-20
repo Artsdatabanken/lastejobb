@@ -1,4 +1,4 @@
-const { json } = require("..");
+const { json } = require("../lib");
 
 const input = {
   z: 2,
@@ -20,13 +20,19 @@ test("sort JSON array", () => {
 });
 
 test("arrayToObject", () => {
-  const arr = [{ id: 5, value: "abc" }, { id: 2, name: "def" }];
+  const arr = [
+    { id: 5, value: "abc" },
+    { id: 2, name: "def" }
+  ];
   const actual = json.arrayToObject(arr, { uniqueKey: "id" });
   expect(actual).toMatchSnapshot();
 });
 
 test("arrayToObject: keep keys", () => {
-  const arr = [{ id: 5, value: "abc" }, { id: 2, name: "def" }];
+  const arr = [
+    { id: 5, value: "abc" },
+    { id: 2, name: "def" }
+  ];
   const actual = json.arrayToObject(arr, {
     uniqueKey: "id",
     removeKeyProperty: false

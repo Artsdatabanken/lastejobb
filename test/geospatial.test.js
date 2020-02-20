@@ -1,7 +1,17 @@
-const { geospatial } = require("..");
+const { geospatial } = require("../lib");
 
-const geom = [[0, 0], [0, 10], [10, 10], [0, 0]];
-const geom2 = [[50, 0], [0, 1], [10, 1], [0, 0]];
+const geom = [
+  [0, 0],
+  [0, 10],
+  [10, 10],
+  [0, 0]
+];
+const geom2 = [
+  [50, 0],
+  [0, 1],
+  [10, 1],
+  [0, 0]
+];
 
 test("area", () => {
   const actual = geospatial.calculateArea(geom);

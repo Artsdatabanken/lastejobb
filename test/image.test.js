@@ -1,4 +1,4 @@
-const { image } = require("..");
+const { image } = require("../lib");
 
 test("detect png", () => {
   const actual = image.getFileType("./test/image/test.png");
