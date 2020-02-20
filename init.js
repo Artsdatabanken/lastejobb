@@ -3,14 +3,13 @@ const fs = require("fs");
 
 const exec = processes.exec;
 
-const scripts = {
-  download: "node node_modules/lastejobb/index stages/download",
-  transform: "node node_modules/lastejobb/index stages/transform",
-  build: "npm run download && npm run transform",
-  deploy: "node node_modules/lastejobb/index stages/deploy"
-};
-
 function addScripts() {
+  const scripts = {
+    download: "node node_modules/lastejobb/lastejobb stages/download",
+    transform: "node node_modules/lastejobb/lastejobb stages/transform",
+    build: "npm run download && npm run transform",
+    deploy: "node node_modules/lastejobb/lastejobb stages/deploy"
+  };
   log.info("Add scripts to package.json");
   const pjson = JSON.parse(fs.readFileSync("package.json"));
   Object.keys(scripts).forEach(key => {
@@ -47,35 +46,43 @@ function installLastejobb() {
   exec("npm", ["install", "lastejobb"]);
 }
 
-const scripts = {
-  download: [
-    'const { http, log } = require("lastejobb");',
-    "",
-    'log.info("Processing...")',
-    ""
-  ],
-  transform: [
-    'const { io, log } = require("lastejobb");',
-    "",
-    'constio.readJson()'
-  ],
-  deploy: [
-    'const { process } = require("lastejobb");',
-    "",
-    'log.info("Processing...")'
-  ]
-};
+const steps = [
+  {
+    path: "stages/download/10_download.js",
+    content: [
+      'const { http, log } = require("lastejobb");',
+      "",
+      'log.info("Processing...")',
+      ""
+    ]
+  },
+  {
+    path: "stages/transform/10_transform.js",
+    content: [
+      'const { io, log } = require("lastejobb");',
+      "",
+      "constio.readJson()"
+    ]
+  },
+  {
+    path: "stages/deploy/10_deploy.js",
+    content: [
+      'const { process } = require("lastejobb");',
+      "",
+      'log.info("Processing...")'
+    ]
+  }
+];
 
-function makeStep(fn) {
+function makeStep(step) {
+  const fn = step.path;
   log.info("Create " + fn);
   if (fs.existsSync(fn)) return log.warn(fn + " already exists");
-  fs.writeFileSync(fn, script.join("\n"));
+  fs.writeFileSync(fn, step.content.join("\n"));
 }
 
 function makeSteps() {
-  makeStep("stages/download/10_download.js");
-  makeStep("stages/transform/10_transform.js");
-  makeStep("stages/deploy/10_deploy.js");
+  steps.forEach(step => makeStep(step));
 }
 
 async function npmInit() {
@@ -99,7 +106,7 @@ function makeGitIgnore() {
 async function init() {
   gitInit();
   makeGitIgnore();
-  await npmInit();
+  npmInit();
   installLastejobb();
   addScripts();
   makeDirs();
