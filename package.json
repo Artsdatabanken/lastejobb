@@ -22,7 +22,7 @@
   "deprecated": false,
   "description": "Rutine for å kjøre en sekvens med lastejobber (js/sh/sparql) i batch",
   "devDependencies": {
-    "jest": "^25.5.0"
+    "jest-core": "0.0.0"
   },
   "keywords": [],
   "license": "MIT",
