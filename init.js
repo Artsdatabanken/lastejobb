@@ -61,7 +61,7 @@ const steps = [
     content: [
       'const { io, log } = require("lastejobb");',
       "",
-      "constio.readJson()"
+      "const data = io.readJson('downloaded')"
     ]
   },
   {
