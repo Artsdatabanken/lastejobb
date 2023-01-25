@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "@types/node": "^18.0.0",
-    "csv-parse": "^4.0.0",
+    "csv-parse": "^5.0.0",
     "decompress-zip": "^0.3.0",
     "fs-extra": "^11.0.0",
     "generate-schema": "^2.6.0",
