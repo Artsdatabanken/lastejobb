@@ -3,7 +3,7 @@
 exports[`area 1`] = `50`;
 
 exports[`bbox 1`] = `
-Array [
+[
   0,
   0,
   10,
@@ -12,7 +12,7 @@ Array [
 `;
 
 exports[`bbox multi 1`] = `
-Array [
+[
   0,
   0,
   50,
