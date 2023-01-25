@@ -33,7 +33,7 @@
   "dependencies": {
     "@types/node": "^18.0.0",
     "csv-parse": "^4.0.0",
-    "decompress-zip": "^0.2.2",
+    "decompress-zip": "^0.3.0",
     "fs-extra": "^9.0.1",
     "generate-schema": "^2.6.0",
     "ini": "^3.0.0",
