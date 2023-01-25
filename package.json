@@ -36,7 +36,7 @@
     "decompress-zip": "^0.2.2",
     "fs-extra": "^9.0.1",
     "generate-schema": "^2.6.0",
-    "ini": "^2.0.0",
+    "ini": "^3.0.0",
     "jest": "^29.0.0",
     "log-less-fancy": "^1.4.0",
     "node-fetch": "^2.6.7",
