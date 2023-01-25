@@ -1,41 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`createUrl 1`] = `
-Object {
-  "AO": Object {
-    "foreldre": Array [],
+{
+  "AO": {
+    "foreldre": [],
     "kode": "AO",
-    "tittel": Object {
+    "tittel": {
       "nb": "Rot",
     },
     "url": "/Rot",
   },
-  "AO-KS": Object {
-    "foreldre": Array [
+  "AO-KS": {
+    "foreldre": [
       "AO",
     ],
     "kode": "AO-KS",
-    "tittel": Object {
+    "tittel": {
       "nb": "Kontinentalsokkel",
     },
     "url": "/Rot/Kontinentalsokkel",
   },
-  "AO-KS-FS": Object {
-    "foreldre": Array [
+  "AO-KS-FS": {
+    "foreldre": [
       "AO-KS",
     ],
     "kode": "AO-KS-FS",
-    "tittel": Object {
+    "tittel": {
       "nb": "Fiskerisone",
     },
     "url": "/Rot/Kontinentalsokkel/Fiskerisone",
   },
-  "AO-KS-FS-JM": Object {
-    "foreldre": Array [
+  "AO-KS-FS-JM": {
+    "foreldre": [
       "AO-KS-FS",
     ],
     "kode": "AO-KS-FS-JM",
-    "tittel": Object {
+    "tittel": {
       "nb": "Jan Mayen",
     },
     "url": "/Rot/Kontinentalsokkel/Fiskerisone/Jan_Mayen",

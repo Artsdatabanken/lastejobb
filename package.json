@@ -21,7 +21,6 @@
   "_resolved": "https://registry.npmjs.org/lastejobb/-/lastejobb-3.5.3.tgz",
   "_shasum": "58b30322809ce296b3fdf28ede5b5d2d5dcba5e7",
   "_spec": "lastejobb@^3.5.3",
-  "_where": "/home/b/src/adb/forvaltningsportal/lastejobb",
   "author": {
     "name": "Bjorn Reppen",
     "email": "bjreppen@gmail.com",
@@ -32,13 +31,13 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "@types/node": "^14.14.17",
-    "csv-parse": "^4.14.2",
+    "@types/node": "^18.0.0",
+    "csv-parse": "^4.0.0",
     "decompress-zip": "^0.2.2",
     "fs-extra": "^9.0.1",
     "generate-schema": "^2.6.0",
     "ini": "^2.0.0",
-    "jest": "^26.6.3",
+    "jest": "^29.0.0",
     "log-less-fancy": "^1.4.0",
     "node-fetch": "^2.6.7",
     "xml2js": "^0.4.23"
