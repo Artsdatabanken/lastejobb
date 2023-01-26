@@ -1,26 +1,9 @@
 {
-  "_from": "lastejobb@^3.5.3",
-  "_id": "lastejobb@3.5.3",
   "_inBundle": false,
-  "_integrity": "sha512-ioczRKOuHZxxWW3qi1o2JMMkAEHJivuiswatkobCSDcvpDFeeuJ4N6v5STSl/byqUHEyGdEK3TB9raJQh/ruSQ==",
   "_location": "/lastejobb",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "lastejobb@^3.5.3",
-    "name": "lastejobb",
-    "escapedName": "lastejobb",
-    "rawSpec": "^3.5.3",
-    "saveSpec": null,
-    "fetchSpec": "^3.5.3"
-  },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/lastejobb/-/lastejobb-3.5.3.tgz",
-  "_shasum": "58b30322809ce296b3fdf28ede5b5d2d5dcba5e7",
-  "_spec": "lastejobb@^3.5.3",
   "author": {
     "name": "Bjorn Reppen",
     "email": "bjreppen@gmail.com",
@@ -48,12 +31,12 @@
   "keywords": [],
   "license": "MIT",
   "main": "index.js",
-  "name": "lastejobb",
+  "name": "@artsdatabanken/lastejobb",
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
     "test": "jest"
   },
-  "version": "3.5.3"
+  "version": "4.0.1"
 }
