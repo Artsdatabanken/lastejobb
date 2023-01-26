@@ -140,3 +140,7 @@ Slå på logging ved å sette environment variabel
 Funksjoner for logging fra lastejobben
 
 Se https://github.com/bjornreppen/log-less-fancy#readme
+
+## NPM 
+https://www.npmjs.com/package/@artsdatabanken/lastejobb
+For å oppdatere her, må man endre versjonsnummer i package.json. 
