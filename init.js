@@ -5,10 +5,10 @@ const exec = processes.exec;
 
 function addScripts() {
   const scripts = {
-    download: "node node_modules/lastejobb/lastejobb stages/download",
-    transform: "node node_modules/lastejobb/lastejobb stages/transform",
+    download: "node node_modules/@artsdatabanken/lastejobb stages/download",
+    transform: "node node_modules/@artsdatabanken/lastejobb stages/transform",
     build: "npm run download && npm run transform",
-    deploy: "node node_modules/lastejobb/lastejobb stages/deploy"
+    deploy: "node node_modules/@artsdatabanken/lastejobb stages/deploy"
   };
   log.info("Add scripts to package.json");
   const pjson = JSON.parse(fs.readFileSync("package.json"));
