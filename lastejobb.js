@@ -11,7 +11,8 @@ switch (argLast) {
     init.init();
 }
 
-if (!process.env.DEBUG) process.env.DEBUG = "*";
+// By default, ignore the long noisy JSON debug logs from axios library follow-redirects
+if (!process.env.DEBUG) process.env.DEBUG = "*,-follow-redirects";
 if (process.argv.length === 3) {
   const scripPath = process.argv[2];
   if (!io.directoryExists(scripPath)) {
