@@ -106,7 +106,7 @@ exports[`sort JSON object 1`] = `
   "y": {
     "a": "abc",
     "c": 5,
-    "inception": 1880-02-01T23:06:32.000Z,
+    "inception": 1980-01-02T12:34:56.000Z,
   },
   "z": 2,
 }
