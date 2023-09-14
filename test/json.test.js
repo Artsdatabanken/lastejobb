@@ -3,7 +3,7 @@ const { json } = require("../lib");
 const input = {
   z: 2,
   k: [6, 1, 3],
-  y: { c: 5, a: "abc", inception: new Date(1880, 1, 2) }
+  y: { c: 5, a: "abc", inception: new Date("1980-01-02T12:34:56Z") }
 };
 const inputArray = [6, 1, 3];
 
