@@ -1,0 +1,248 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`download and untar 1`] = `
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "properties": {
+    "items": {
+      "items": {
+        "properties": {
+          "autorkode": {
+            "type": "string",
+          },
+          "geografi": {
+            "properties": {
+              "areal": {
+                "type": "number",
+              },
+              "bbox": {
+                "items": {
+                  "type": "number",
+                },
+                "type": "array",
+              },
+              "nabo": {
+                "items": {
+                  "type": "string",
+                },
+                "type": "array",
+              },
+            },
+            "type": "object",
+          },
+          "inception": {
+            "type": "string",
+          },
+          "kode": {
+            "type": "string",
+          },
+          "lenke": {
+            "properties": {
+              "offisiell": {
+                "type": "string",
+              },
+              "wikidata": {
+                "type": "string",
+              },
+              "wikipedia": {
+                "type": "string",
+              },
+            },
+            "type": "object",
+          },
+          "mediakilde": {
+            "properties": {
+              "banner": {
+                "items": {
+                  "type": "string",
+                },
+                "type": "array",
+              },
+              "flagg": {
+                "type": "string",
+              },
+              "foto": {
+                "items": {
+                  "type": "string",
+                },
+                "type": "array",
+              },
+              "logo": {
+                "type": "string",
+              },
+            },
+            "type": "object",
+          },
+          "nivå": {
+            "type": "string",
+          },
+          "osm": {
+            "type": "string",
+          },
+          "tittel": {
+            "properties": {
+              "fkv": {
+                "type": "string",
+              },
+              "nob": {
+                "type": "string",
+              },
+              "sma": {
+                "type": "string",
+              },
+              "sme": {
+                "type": "string",
+              },
+              "smj": {
+                "type": "string",
+              },
+            },
+            "type": "object",
+          },
+          "url": {
+            "type": "string",
+          },
+        },
+        "required": [
+          "autorkode",
+          "geografi",
+          "kode",
+          "tittel",
+          "url",
+          "lenke",
+          "mediakilde",
+          "nivå",
+          "osm",
+          "inception",
+        ],
+        "type": "object",
+      },
+      "type": "array",
+    },
+    "meta": {
+      "properties": {
+        "elementer": {
+          "type": "number",
+        },
+        "produsertUtc": {
+          "type": "string",
+        },
+        "source": {
+          "items": {
+            "properties": {
+              "elementer": {
+                "type": "number",
+              },
+              "name": {
+                "type": "string",
+              },
+              "produsertUtc": {
+                "type": "string",
+              },
+              "source": {
+                "items": {
+                  "properties": {
+                    "elementer": {
+                      "type": "number",
+                    },
+                    "name": {
+                      "type": "string",
+                    },
+                    "produsertUtc": {
+                      "type": "string",
+                    },
+                    "source": {
+                      "items": {},
+                      "type": "array",
+                    },
+                    "tittel": {
+                      "type": "string",
+                    },
+                    "tool": {
+                      "type": "string",
+                    },
+                    "url": {
+                      "type": "string",
+                    },
+                    "utgiver": {
+                      "type": "string",
+                    },
+                  },
+                  "required": [
+                    "name",
+                    "tittel",
+                    "produsertUtc",
+                    "utgiver",
+                    "url",
+                    "tool",
+                    "elementer",
+                    "source",
+                  ],
+                  "type": "object",
+                },
+                "type": "array",
+              },
+              "tittel": {
+                "type": "string",
+              },
+              "tool": {
+                "properties": {
+                  "commit": {
+                    "type": "string",
+                  },
+                  "name": {
+                    "type": "string",
+                  },
+                },
+                "type": "object",
+              },
+              "url": {
+                "type": "string",
+              },
+              "utgiver": {
+                "type": "string",
+              },
+            },
+            "required": [
+              "name",
+              "tittel",
+              "produsertUtc",
+              "utgiver",
+              "url",
+              "elementer",
+              "source",
+            ],
+            "type": "object",
+          },
+          "type": "array",
+        },
+        "tittel": {
+          "type": "string",
+        },
+        "tool": {
+          "properties": {
+            "commit": {
+              "type": "string",
+            },
+            "name": {
+              "type": "string",
+            },
+            "url": {
+              "type": "null",
+            },
+          },
+          "type": "object",
+        },
+        "url": {
+          "type": "null",
+        },
+        "utgiver": {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "type": "object",
+}
+`;
