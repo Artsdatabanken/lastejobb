@@ -33,5 +33,8 @@
   "scripts": {
     "test": "jest"
   },
+  "engines": {
+    "node": ">=18.0.0"  
+  },
   "version": "4.0.12"
 }
