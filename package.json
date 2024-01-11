@@ -8,15 +8,15 @@
     "lastejobb": "lastejobb.js"
   },
   "dependencies": {
-    "@types/node": "^18.0.0",
-    "csv-parse": "^5.0.0",
+    "@types/node": "^20.11.0",
+    "csv-parse": "^5.5.3",
     "decompress-zip": "^0.3.0",
-    "fs-extra": "^11.0.0",
+    "fs-extra": "^11.2.0",
     "generate-schema": "^2.6.0",
-    "ini": "^3.0.0",
-    "jest": "^29.0.0",
+    "ini": "^4.1.1",
+    "jest": "^29.7.0",
     "log-less-fancy": "^1.4.0",
-    "xml2js": "^0.4.23"
+    "xml2js": "^0.6.2"
   },
   "deprecated": false,
   "description": "Rutine for å kjøre en sekvens med lastejobber (js/sh/sparql) i batch",
@@ -36,9 +36,5 @@
   "engines": {
     "node": ">=18.0.0"  
   },
-<<<<<<< Updated upstream
-  "version": "4.0.14"
-=======
   "version": "4.0.16"
->>>>>>> Stashed changes
 }
